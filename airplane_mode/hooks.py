@@ -132,7 +132,7 @@ doctype_js = {"Flight Passenger" : "public/js/flight_passenger.js"}
 # Override standard doctype classes
 
 # override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
+# 	"ToDo": "custom_app.overr	ides.CustomToDo"
 # }
 
 # Document Events
@@ -140,10 +140,15 @@ doctype_js = {"Flight Passenger" : "public/js/flight_passenger.js"}
 # Hook on document methods and events
 
 doc_events = {
-	"Flight Passenger": {
-        "before_save":"airplane_mode.py.flight_passenger.before_save"
-	}
-}
+    "Flight Passenger": {
+        "before_save": "airplane_mode.py.flight_passenger.before_save",
+        "before_insert":"airplane_mode.py.flight_passenger.before_save"
+    },
+    "Airplane Ticket": {    
+        "before_save": "airplane_mode.py.Airplane_ticket.before_save"  # Change from after_save to before_save
+    },
+}	
+
 
 # Scheduled Tasks
 # ---------------
