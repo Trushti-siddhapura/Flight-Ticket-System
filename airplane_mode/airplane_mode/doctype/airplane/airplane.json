@@ -1,6 +1,5 @@
 {
  "actions": [],
- "allow_rename": 1,
  "creation": "2025-03-04 10:46:48.274571",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -34,7 +33,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-04 15:59:19.882193",
+ "modified": "2025-03-05 12:15:16.891114",
  "modified_by": "Administrator",
  "module": "Airplane mode",
  "name": "Airplane",

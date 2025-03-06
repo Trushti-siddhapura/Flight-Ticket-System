@@ -5,6 +5,8 @@ app_description = "This is basically regarding to Airplanes and all"
 app_email = "trushti@sanskartechnolab.com"
 app_license = "mit"
 
+
+
 # Apps
 # ------------------
 
@@ -43,7 +45,7 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {"Flight Passenger" : "public/js/flight_passenger.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -137,13 +139,11 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Flight Passenger": {
+        "before_save":"airplane_mode.py.flight_passenger.before_save"
+	}
+}
 
 # Scheduled Tasks
 # ---------------

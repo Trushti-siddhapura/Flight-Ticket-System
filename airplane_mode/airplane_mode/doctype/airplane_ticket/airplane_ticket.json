@@ -17,6 +17,7 @@
   "section_break_mlzx",
   "departure_date",
   "departure_time",
+  "status",
   "column_break_dauy",
   "duration_of_flight",
   "amended_from"
@@ -96,7 +97,8 @@
   },
   {
    "fieldname": "section_break_mlzx",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Departure Details"
   },
   {
    "fieldname": "column_break_dauy",
@@ -111,12 +113,20 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "default": "Booked",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Booked\nChecked-In\nBoarded",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-04 18:53:13.468374",
+ "modified": "2025-03-05 10:40:32.797095",
  "modified_by": "Administrator",
  "module": "Airplane mode",
  "name": "Airplane Ticket",
@@ -139,6 +149,19 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Gray",
+   "title": "Booked"
+  },
+  {
+   "color": "Purple",
+   "title": "Checked-In"
+  },
+  {
+   "color": "Green",
+   "title": "Boarded"
+  }
+ ],
  "track_changes": 1
 }

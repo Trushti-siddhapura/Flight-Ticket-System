@@ -5,8 +5,6 @@ class Airplane(Document):
     def autoname(self):
      
         airline = self.airline.replace(" ", "")
-
-  
         total_airplane = frappe.db.count("Airplane", {"airline": self.airline}) + 1
 
  

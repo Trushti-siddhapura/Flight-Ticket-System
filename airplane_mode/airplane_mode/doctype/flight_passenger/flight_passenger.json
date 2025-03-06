@@ -34,7 +34,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-04 16:52:59.404195",
+ "modified": "2025-03-05 16:52:24.585525",
  "modified_by": "Administrator",
  "module": "Airplane mode",
  "name": "Flight Passenger",
@@ -56,6 +56,5 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "title_field": "first_name"
+ "states": []
 }

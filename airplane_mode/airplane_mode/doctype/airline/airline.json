@@ -33,8 +33,13 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-03-04 15:49:30.718425",
+ "links": [
+  {
+   "link_doctype": "Airplane",
+   "link_fieldname": "airline"
+  }
+ ],
+ "modified": "2025-03-05 10:50:22.206036",
  "modified_by": "Administrator",
  "module": "Airplane mode",
  "name": "Airline",
