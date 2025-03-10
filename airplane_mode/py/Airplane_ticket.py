@@ -21,7 +21,7 @@ def before_save(doc, method):
         frappe.throw("You can't submit")
 
 
-def before_insert(doc):
+def before_insert(doc,method):
    doc.seat = f"{random.randint(1, 99)}{random.choice('ABCDE')}"
 
 

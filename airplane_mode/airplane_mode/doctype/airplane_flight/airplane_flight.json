@@ -19,7 +19,8 @@
   "date_of_departure",
   "duration",
   "column_break_gkzx",
-  "time_of_departure"
+  "time_of_departure",
+  "amended_from"
  ],
  "fields": [
   {
@@ -107,16 +108,27 @@
   {
    "fieldname": "column_break_gkzx",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Airplane Flight",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [
   {
    "link_doctype": "Airplane Ticket",
    "link_fieldname": "flight"
   }
  ],
- "modified": "2025-03-06 18:44:04.235718",
+ "modified": "2025-03-07 11:25:28.385753",
  "modified_by": "Administrator",
  "module": "Airplane mode",
  "name": "Airplane Flight",
@@ -133,6 +145,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

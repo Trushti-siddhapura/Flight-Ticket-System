@@ -142,11 +142,16 @@ doctype_js = {"Flight Passenger" : "public/js/flight_passenger.js"}
 doc_events = {
     "Flight Passenger": {
         "before_save": "airplane_mode.py.flight_passenger.before_save",
-        "before_insert":"airplane_mode.py.flight_passenger.before_save"
+        
     },
     "Airplane Ticket": {    
-        "before_save": "airplane_mode.py.Airplane_ticket.before_save"  # Change from after_save to before_save
+        "before_save": "airplane_mode.py.Airplane_ticket.before_save", # Change from after_save to before_save
+        "before_insert":"airplane_mode.py.Airplane_ticket.before_insert"
     },
+    "Airplane Flight":{
+         "on_submit":"airplane_mode.py.airplane_flight.on_submit"
+    }
+   
 }	
 
 
