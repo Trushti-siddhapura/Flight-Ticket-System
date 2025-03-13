@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "format:{flight}-{source_airport_code}-to-{destination_airport_code}-{###}",
  "creation": "2025-03-04 17:18:40.476552",
@@ -160,7 +161,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-06 17:45:12.068489",
+ "modified": "2025-03-13 10:51:44.036409",
  "modified_by": "Administrator",
  "module": "Airplane mode",
  "name": "Airplane Ticket",

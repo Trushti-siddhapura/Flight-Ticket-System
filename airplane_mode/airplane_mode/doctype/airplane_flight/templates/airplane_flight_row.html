@@ -1,0 +1,16 @@
+
+
+{% block page_content %}
+<div class="container">
+	<div class="card my-3">
+		<div class="card-body border 2">
+			<div class="card-title"><strong>{{ airplane }}</strong></div>
+			<p class="card-text">
+				{{ source_airport }} → {{ destination_airport }}<br>
+				{{ date_of_departure }} | {{ time_of_departure }} {{ duration }}  <br>
+				<a href="/airplane_flight/{{name}}" class="text-primary">View Details</a>
+			</p>
+		</div>
+	</div>
+</div>
+{% endblock %}	

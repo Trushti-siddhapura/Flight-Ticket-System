@@ -1,0 +1,26 @@
+
+{% block page_content %}
+<div class="container" style="margin: 60px;">
+    <h2>{{name}}</h2>
+    <h3>    Flight Detailes   </h3>
+    <ul>
+        <li>
+            Airline:{{airplane}}
+            <li>
+                {{source_airport_code}} {{destination_airport_code}}<br>
+            </li>
+           <li>
+            {{date_of_departure}} | {{time_of_departure}}<br>
+           </li>
+            <li>
+                {{frappe.utils.formate_duration(doc.duration)}}
+                Duration:{{doc. duration}} 
+            </li>
+            
+        </li>
+        <div style="margin-top: 20px;">
+        <button type="button" class="btn" style="padding: 10px;background-color:skyblue;">Basic Button</button>
+    </div>
+    </ul>       
+</div>
+{% endblock %}

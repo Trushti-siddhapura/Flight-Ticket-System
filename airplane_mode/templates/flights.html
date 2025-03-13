@@ -1,0 +1,15 @@
+{% extends "templates/web.html" %}
+
+{%block page_content %} 
+<h1>Avilable Flight</h1>
+<ul>
+    {% for flight in frappe.get_all("Airplane flight",filters = {"published":1},fields=["name","source_airport","destination_airport","date_of_departure","time_of_departure","duration"]) %} 
+    <li>
+        <strong>
+            {{flight.source_airport}} → {{flight.destination_airport}}</strong><br>
+            {{flight.date_of_departure}} | {{flight.time_of_departure}} | {{flight.duration}}
+            <a href="/flights/{{ flight.name }}">View Flight </a>
+    </li>
+    {{% endfor %}}
+</ul>   
+{{% endblock %}}

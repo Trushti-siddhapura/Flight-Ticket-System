@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "format:{airplane}-{MM}-{YY}-{#####}",
  "creation": "2025-03-06 16:26:24.578975",
@@ -7,6 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "airplane",
+  "route",
+  "is_publish",
   "column_break_ieee",
   "status",
   "section_break_wpbl",
@@ -118,9 +121,22 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "route"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_publish",
+   "fieldtype": "Check",
+   "label": "is publish"
   }
  ],
- "index_web_pages_for_search": 1,
+ "has_web_view": 1,
+ "is_published_field": "is_publish",
  "is_submittable": 1,
  "links": [
   {
@@ -128,7 +144,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2025-03-07 11:25:28.385753",
+ "modified": "2025-03-13 17:00:32.794014",
  "modified_by": "Administrator",
  "module": "Airplane mode",
  "name": "Airplane Flight",
@@ -149,6 +165,7 @@
    "write": 1
   }
  ],
+ "route": "airplane_flight",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
