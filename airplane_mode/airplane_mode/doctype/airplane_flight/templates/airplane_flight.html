@@ -1,26 +1,30 @@
-
 {% block page_content %}
-<div class="container" style="margin: 60px;">
-    <h2>{{name}}</h2>
-    <h3>    Flight Detailes   </h3>
-    <ul>
-        <li>
-            Airline:{{airplane}}
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #494848;">
+    <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 400px; text-align: center;">
+        <h2>{{ name }}</h2>
+        <h3>Flight Details</h3>
+        <hr>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin: 10px 0; font-size: 16px;"><b>Airline:</b> {{ frappe.db.get_value("Airplane", doc.airplane, "airline") }}</li>
             <li>
-                {{source_airport_code}} {{destination_airport_code}}<br>
+                <b>{{ source_airport_code }} ----> {{ destination_airport_code }}</b><br>
             </li>
-           <li>
-            {{date_of_departure}} | {{time_of_departure}}<br>
-           </li>
             <li>
-                {{frappe.utils.formate_duration(doc.duration)}}
-                Duration:{{doc. duration}} 
+                <b>From:</b> {{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }}
+                | <b>To:</b> {{ time_of_departure }}<br>
             </li>
-            
-        </li>
+            <li>
+                <b>Duration:</b> {{ frappe.utils.format_duration(doc.duration)}}
+            </li>
+        </ul>
         <div style="margin-top: 20px;">
-        <button type="button" class="btn" style="padding: 10px;background-color:skyblue;">Basic Button</button>
+            <button type="button" class="btn" onclick="openWebForm()" style="padding: 10px; background-color: skyblue;">Basic Button</button>
+        </div>
+        <script>
+            function openWebForm(){
+                window.location.href="{{frappe.utils.get_url('http://127.0.0.1:8001/airplane-ticket-web-form/list')}}"
+            }
+        </script>
     </div>
-    </ul>       
 </div>
 {% endblock %}
