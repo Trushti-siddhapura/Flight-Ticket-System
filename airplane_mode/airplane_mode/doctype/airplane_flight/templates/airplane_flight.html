@@ -22,8 +22,11 @@
         </div>
         <script>
             function openWebForm(){
-                window.location.href="{{frappe.utils.get_url('http://127.0.0.1:8001/airplane-ticket-web-form/list')}}"
-            }
+                let flight = "{{doc.name}}"
+                window.location.href = `http://127.0.0.1:8000/book-ticket-web-form/new?flight=${flight}`;
+
+
+            }       
         </script>
     </div>
 </div>

@@ -146,7 +146,8 @@ doc_events = {
     },
     "Airplane Ticket": {    
         "before_save": "airplane_mode.py.Airplane_ticket.before_save", # Change from after_save to before_save
-        "before_insert":"airplane_mode.py.Airplane_ticket.before_insert"
+        "before_insert":"airplane_mode.py.Airplane_ticket.before_insert",
+        "validate":"airplane_mode.py.capacity.validate_ticket"
     },
     "Airplane Flight":{
          "on_submit":"airplane_mode.py.airplane_flight.on_submit"
