@@ -6,7 +6,6 @@ def after_insert(doc,method):
 
     frappe.db.set_value(doc.doctype,doc.name,"name",new_name)
 
-
     doc.reload()
 
 

@@ -12,6 +12,7 @@
   "is_publish",
   "column_break_ieee",
   "status",
+  "gate_number",
   "section_break_wpbl",
   "source_airport",
   "destination_airport",
@@ -23,7 +24,9 @@
   "duration",
   "column_break_gkzx",
   "time_of_departure",
-  "amended_from"
+  "amended_from",
+  "crew_department_section",
+  "crew_members"
  ],
  "fields": [
   {
@@ -133,6 +136,23 @@
    "fieldname": "is_publish",
    "fieldtype": "Check",
    "label": "is publish"
+  },
+  {
+   "fieldname": "crew_department_section",
+   "fieldtype": "Section Break",
+   "label": "Crew Department"
+  },
+  {
+   "fieldname": "crew_members",
+   "fieldtype": "Table",
+   "label": "Crew Members",
+   "options": "Flight Crew"
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number",
+   "reqd": 1
   }
  ],
  "has_web_view": 1,
@@ -144,7 +164,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2025-03-13 17:00:32.794014",
+ "modified": "2025-03-18 18:07:26.401180",
  "modified_by": "Administrator",
  "module": "Airplane mode",
  "name": "Airplane Flight",

@@ -14,6 +14,7 @@
   "column_break_imfo",
   "flight",
   "destination_airport_code",
+  "gate_number",
   "section_break_mlzx",
   "departure_date",
   "departure_time",
@@ -156,12 +157,19 @@
    "fieldtype": "Data",
    "label": "Seat",
    "read_only": 1
+  },
+  {
+   "fetch_from": "flight.gate_number",
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-13 10:51:44.036409",
+ "modified": "2025-03-18 18:08:35.539458",
  "modified_by": "Administrator",
  "module": "Airplane mode",
  "name": "Airplane Ticket",
