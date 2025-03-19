@@ -22,3 +22,7 @@ def validate_ticket(doc, method):
 
     if ticket_count >= capacity:
         frappe.throw("This airplane has no available seats.")
+
+
+
+        ####################helloooooo
