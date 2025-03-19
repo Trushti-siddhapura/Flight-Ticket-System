@@ -1,46 +1,35 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:country",
- "creation": "2025-03-04 16:23:41.491580",
+ "creation": "2025-03-19 17:25:18.418034",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "code",
-  "city",
-  "country"
+  "airport",
+  "shops"
  ],
  "fields": [
   {
-   "fieldname": "code",
-   "fieldtype": "Data",
+   "fieldname": "airport",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Code",
+   "label": "Airport",
+   "options": "Airport",
    "reqd": 1
   },
   {
-   "fieldname": "city",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "City",
-   "reqd": 1
-  },
-  {
-   "fieldname": "country",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Country",
-   "reqd": 1,
-   "unique": 1
+   "fieldname": "shops",
+   "fieldtype": "Table",
+   "label": "Shops",
+   "options": "Airport Shop Table"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-19 17:24:36.168584",
+ "modified": "2025-03-19 17:39:30.991801",
  "modified_by": "Administrator",
  "module": "Airplane mode",
- "name": "Airport",
- "naming_rule": "By fieldname",
+ "name": "Airport with Shops",
  "owner": "Administrator",
  "permissions": [
   {

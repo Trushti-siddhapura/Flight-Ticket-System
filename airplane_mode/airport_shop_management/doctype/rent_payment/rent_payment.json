@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{shop_name}-{MM}-{YYYY}-{###}",
+ "creation": "2025-03-19 12:36:08.750116",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "shop_name",
+  "tenant",
+  "monthly_rent_amount",
+  "payment_status",
+  "section_break_idny",
+  "start_date",
+  "column_break_pvpr",
+  "end_date"
+ ],
+ "fields": [
+  {
+   "fetch_from": "shop_name.tenant",
+   "fieldname": "tenant",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Lease Contract",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "shop_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shop Name",
+   "options": "Lease Contract",
+   "reqd": 1
+  },
+  {
+   "default": "Paid",
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status ",
+   "options": "Pending\nPaid",
+   "reqd": 1
+  },
+  {
+   "fieldname": "monthly_rent_amount",
+   "fieldtype": "Currency",
+   "label": "Monthly_rent_amount",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End date",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start date",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_idny",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_pvpr",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-19 16:27:01.532816",
+ "modified_by": "Administrator",
+ "module": "airport_shop_management",
+ "name": "Rent Payment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

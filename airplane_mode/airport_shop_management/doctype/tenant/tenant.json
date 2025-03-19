@@ -1,45 +1,41 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:country",
- "creation": "2025-03-04 16:23:41.491580",
+ "autoname": "field:tenant_name",
+ "creation": "2025-03-19 10:58:44.681618",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "code",
-  "city",
-  "country"
+  "tenant_name",
+  "email",
+  "contact_number"
  ],
  "fields": [
   {
-   "fieldname": "code",
+   "fieldname": "tenant_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Code",
-   "reqd": 1
-  },
-  {
-   "fieldname": "city",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "City",
-   "reqd": 1
-  },
-  {
-   "fieldname": "country",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Country",
+   "label": "Tenant Name",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-19 17:24:36.168584",
+ "modified": "2025-03-19 11:04:21.969937",
  "modified_by": "Administrator",
- "module": "Airplane mode",
- "name": "Airport",
+ "module": "airport_shop_management",
+ "name": "Tenant",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

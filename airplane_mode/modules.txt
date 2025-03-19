@@ -1,2 +1,2 @@
 Airplane mode
-airport shop management
+airport_shop_management

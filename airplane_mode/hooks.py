@@ -4,6 +4,9 @@ app_publisher = "Trushti-Siddhapura"
 app_description = "This is basically regarding to Airplanes and all"
 app_email = "trushti@sanskartechnolab.com"
 app_license = "mit"
+api_whitelist = ["airplane_mode.py.rent_payment.fetch_monthly_rent"]
+app_include_js = "/assets/airplane_mode/js/airport_with_shops.js"
+
 
 
 
@@ -46,6 +49,9 @@ app_license = "mit"
 
 # include js in doctype views
 doctype_js = {"Flight Passenger" : "public/js/flight_passenger.js"}
+doctype_js = {
+    "Rent Payment":"public/js/rent_payment.js"
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -151,31 +157,36 @@ doc_events = {
     },
     "Airplane Flight":{
          "on_submit":"airplane_mode.py.airplane_flight.on_submit"
+    },
+    "Lease Contract":{
+        "before_save": "airplane_mode.py.lease_contract.check_lease_expiry"
+    }, 
+    "Airport with Shops":{
+        "on_refersh":"airplane_mode.py.update_airport_shop.update_airport_shops"
     }
-   
 }	
 
 
 # Scheduled Tasks
 # ---------------
 
-scheduler_events = {
-	# "all": [
-	# 	"airplane_mode.tasks.all"
-	# ],
-	"daily": [
-		"airplane_mode.airplane_mode.py.update_lease_status.update_lease_status"
-	],
-# 	"hourly": [
-# 		"airplane_mode.tasks.hourly"
+# scheduler_events = {
+# 	# "all": [
+# 	# 	"airplane_mode.tasks.all"
+# 	# ],
+# 	"monthly": [
+# 		"airplane_mode.py.rent_payment.generate_monthly_rent_payments"
 # 	],
+# # 	"hourly": [
+# # 		"airplane_mode.tasks.hourly"
+# # 	],
 # 	"weekly": [
 # 		"airplane_mode.tasks.weekly"
 # 	],
 # 	"monthly": [
 # 		"airplane_mode.tasks.monthly"
 # 	],
-}
+# }
 
 # Testing
 # -------

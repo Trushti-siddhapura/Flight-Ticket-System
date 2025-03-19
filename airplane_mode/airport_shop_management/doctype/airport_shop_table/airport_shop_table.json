@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-19 17:00:59.170832",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "shop_name",
+  "tenant",
+  "rent_amount",
+  "start_date",
+  "end_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "shop_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shop Name",
+   "options": "Airport Shop",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rent_amount",
+   "fieldtype": "Currency",
+   "label": "rent_amount"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "start_date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "end_date",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-19 17:38:32.749590",
+ "modified_by": "Administrator",
+ "module": "airport_shop_management",
+ "name": "Airport Shop Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

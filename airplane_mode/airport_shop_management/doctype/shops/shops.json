@@ -1,46 +1,27 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:country",
- "creation": "2025-03-04 16:23:41.491580",
+ "creation": "2025-03-19 16:55:40.159489",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "code",
-  "city",
-  "country"
+  "shop_name"
  ],
  "fields": [
   {
-   "fieldname": "code",
+   "fieldname": "shop_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Code",
+   "label": "Shop Name",
    "reqd": 1
-  },
-  {
-   "fieldname": "city",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "City",
-   "reqd": 1
-  },
-  {
-   "fieldname": "country",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Country",
-   "reqd": 1,
-   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-19 17:24:36.168584",
+ "modified": "2025-03-19 16:56:11.258149",
  "modified_by": "Administrator",
- "module": "Airplane mode",
- "name": "Airport",
- "naming_rule": "By fieldname",
+ "module": "airport_shop_management",
+ "name": "Shops",
  "owner": "Administrator",
  "permissions": [
   {
