@@ -159,13 +159,13 @@ doc_events = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"airplane_mode.tasks.all"
-# 	],
-# 	"daily": [
-# 		"airplane_mode.tasks.daily"
-# 	],
+scheduler_events = {
+	# "all": [
+	# 	"airplane_mode.tasks.all"
+	# ],
+	"daily": [
+		"airplane_mode.airplane_mode.py.update_lease_status.update_lease_status"
+	],
 # 	"hourly": [
 # 		"airplane_mode.tasks.hourly"
 # 	],
@@ -175,7 +175,7 @@ doc_events = {
 # 	"monthly": [
 # 		"airplane_mode.tasks.monthly"
 # 	],
-# }
+}
 
 # Testing
 # -------
