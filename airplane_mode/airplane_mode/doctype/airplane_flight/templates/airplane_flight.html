@@ -1,20 +1,20 @@
 {% block page_content %}
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #494848;">
     <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 400px; text-align: center;">
-        <h2>{{ name }}</h2>
+        <h2>{{ doc.name }}</h2>
         <h3>Flight Details</h3>
         <hr>
         <ul style="list-style: none; padding: 0;">
             <li style="margin: 10px 0; font-size: 16px;"><b>Airline:</b> {{ frappe.db.get_value("Airplane", doc.airplane, "airline") }}</li>
             <li>
-                <b>{{ source_airport_code }} ----> {{ destination_airport_code }}</b><br>
+                <b>{{ doc.source_airport_code }} ----> {{ doc.destination_airport_code }}</b><br>
             </li>
             <li>
                 <b>From:</b> {{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }}
-                | <b>To:</b> {{ time_of_departure }}<br>
+                | <b>To:</b> {{ doc.time_of_departure }}<br>
             </li>
             <li>
-                <b>Duration:</b> {{ frappe.utils.format_duration(doc.duration)}}
+                <b>Duration:</b> {{ doc.duration or 0 }} hrs
             </li>
         </ul>
         <div style="margin-top: 20px;">
@@ -22,10 +22,8 @@
         </div>
         <script>
             function openWebForm(){
-                let flight = "{{doc.name}}"
+                let flight = "{{ doc.name }}";
                 window.location.href = `http://127.0.0.1:8000/book-ticket-web-form/new?flight=${flight}`;
-
-
             }       
         </script>
     </div>

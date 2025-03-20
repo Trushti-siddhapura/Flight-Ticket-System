@@ -1,16 +1,29 @@
 import frappe
 
 def get_context(context):
-    frappe.msgprint(f"Received Parameters: {frappe.form_dict}")  # Debug URL params
-    
-    shop_name = frappe.form_dict.get("shop")  # Get shop name from URL
-    if not shop_name:
-        frappe.throw("Shop parameter is missing in URL")
+    print("shop_details.py is running")  # Debugging line
 
-    shop = frappe.get_all("Airport Shop", filters={"shop_name": shop_name}, fields=["*"])
+    # Check if shop_name is received from the URL
+    shop_name = frappe.form_dict.get("shop")
+    print("Received Shop Name:", shop_name)
+
+    if not shop_name:
+        context.shop = {"error": "No shop name provided"}
+        return context
+
+    # Fetch Shop Details
+    shop = frappe.get_value(
+        "Airport Shop",
+        {"name": shop_name},
+        ["shop_name", "shop_number", "airport_city", "tenant", "rent"],
+        as_dict=True
+    )
+
+    print("Shop Data:", shop)  # Debugging Output
 
     if not shop:
-        frappe.throw(f"Shop '{shop_name}' does not exist in the database")
+        context.shop = {"error": "Shop not found"}
+    else:
+        context.shop = shop  # Ensure it's a dictionary
 
-    context.shop = shop[0]  # Pass shop details to Jinja template
     return context

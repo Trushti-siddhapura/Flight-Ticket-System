@@ -6,9 +6,14 @@ app_email = "trushti@sanskartechnolab.com"
 app_license = "mit"
 api_whitelist = ["airplane_mode.py.rent_payment.fetch_monthly_rent"]
 app_include_js = "/assets/airplane_mode/js/airport_with_shops.js"
+app_include_css = "/assets/airplane_mode/css/style.css"  # Include CSS globally
+
+api_paths = ["airplane_mode.py.shop_details.get_shop_details"]
 
 
-
+website_context = {
+    "shop": "Airport Shop"  # Ensure this exists if needed
+}
 
 # Apps
 # ------------------
@@ -157,7 +162,8 @@ doc_events = {
     },
     "Airplane Flight":{
          "on_submit":"airplane_mode.py.airplane_flight.on_submit",
-         "on_update":"airplane_mode.py.trigger_gate_number.trigger_gate_number"
+         "on_update": "airplane_mode.py.update_gate.trigger_update_gate_number"
+
     },
     "Lease Contract":{
         "before_save": "airplane_mode.py.lease_contract.check_lease_expiry"

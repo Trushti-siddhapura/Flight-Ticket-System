@@ -76,7 +76,8 @@
                     <li><strong>Airport City:</strong> {{ shop.airport_city }}</li>
                     <li><strong>Tenant:</strong> {{ shop.tenant or "Available" }}</li>
                 </ul>
-                <a href="/shop_detailes?{{ shop.name }}" class="shop-link">View Details</a>
+                <a href="/shop_detailes?shop={{ shop.name }}" class="shop-link">View Details</a>
+
 
 
             </div>

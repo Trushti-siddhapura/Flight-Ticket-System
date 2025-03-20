@@ -1,39 +1,58 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{shop_name}-{###}",
  "creation": "2025-03-19 16:55:40.159489",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "shop_name",
+  "airport",
   "location",
-  "description"
+  "rent",
+  "shop_type"
  ],
  "fields": [
   {
    "fieldname": "shop_name",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Shop Name",
+   "options": "Lease Contract",
    "reqd": 1
   },
   {
-   "fieldname": "description",
-   "fieldtype": "Data",
-   "label": "Description"
-  },
-  {
+   "fetch_from": "airport.airport_city",
    "fieldname": "location",
    "fieldtype": "Data",
-   "label": "Location"
+   "label": "City"
+  },
+  {
+   "fetch_from": "shop_name.rent_amount",
+   "fieldname": "rent",
+   "fieldtype": "Currency",
+   "label": "Rent"
+  },
+  {
+   "fieldname": "airport",
+   "fieldtype": "Link",
+   "label": "Airport",
+   "options": "Airport Shop"
+  },
+  {
+   "fieldname": "shop_type",
+   "fieldtype": "Link",
+   "label": "Shop_Type",
+   "options": "Shop Type"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-20 06:56:31.215703",
+ "modified": "2025-03-20 22:35:05.007028",
  "modified_by": "Administrator",
  "module": "airport_shop_management",
  "name": "Shops",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
