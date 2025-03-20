@@ -8,23 +8,26 @@ def before_save(doc, method):
     for add_on in doc.add_ons:
         if add_on.item not in seen_add_on:
             seen_add_on.add(add_on.item)
-            unique_add_ons.append(add_on)  # Append single add_on, not the whole doc.add_ons
+            unique_add_ons.append(add_on)  
 
-    # Calculate total amount correctly
     total_amount = sum(add.amount for add in unique_add_ons)
 
-    # Ensure flight_price is a valid number
     try:
-        flight_price = float(doc.flight_price) if doc.flight_price else 0
+        # Ensure flight_price is set correctly
+        doc.flight_price = float(doc.flight_price) if doc.flight_price else get_default_flight_price(doc.flight)
     except ValueError:
-        flight_price = 0  # Default to 0 if conversion fails
+        doc.flight_price = get_default_flight_price(doc.flight)
 
-    # Update total amount in the document
-    doc.total_amount = flight_price + total_amount
-
-    if doc.status not in ["Boarded", "Confirmed"]:  # Adjust as needed
-        frappe.throw("You can't submit. Only Boarded or Confirmed status is allowed.")
-
+    doc.total_amount = doc.flight_price + total_amount
 
 def before_insert(doc, method):
     doc.seat = f"{random.randint(1, 99)}{random.choice('ABCDE')}"
+    
+    # Ensure flight_price is set before saving
+    if not doc.flight_price:
+        doc.flight_price = get_default_flight_price(doc.flight)
+
+# Function to fetch default flight price
+def get_default_flight_price(flight):
+    flight_price = frappe.db.get_value("Flight", flight, "price")
+    return float(flight_price) if flight_price else 0
