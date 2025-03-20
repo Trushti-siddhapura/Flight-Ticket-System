@@ -8,6 +8,7 @@
  "field_order": [
   "contract_id",
   "shop_name",
+  "email",
   "tenant",
   "rent_amount",
   "start_date",
@@ -55,11 +56,16 @@
    "in_list_view": 1,
    "label": "Lease End Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "email"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-19 15:56:54.778679",
+ "modified": "2025-03-19 21:49:46.299854",
  "modified_by": "Administrator",
  "module": "airport_shop_management",
  "name": "Lease Contract",

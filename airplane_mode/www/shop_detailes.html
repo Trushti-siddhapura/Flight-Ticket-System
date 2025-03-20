@@ -1,0 +1,8 @@
+{% if shop %}
+    <h1>{{ shop.shop_name }}</h1>
+    <p><strong>Shop Number:</strong> {{ shop.shop_number }}</p>
+    <p><strong>Airport City:</strong> {{ shop.airport_city }}</p>
+    <p><strong>Tenant:</strong> {{ shop.tenant or "Available" }}</p>
+{% else %}
+    <p style="color: red;">Shop not found. Please check the URL.</p>
+{% endif %}

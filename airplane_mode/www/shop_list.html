@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport Shops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .shop-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap:12px
+        }
+        .shop-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.2s;
+        }
+        .shop-card:hover {
+            transform: scale(1.05);
+        }
+        .shop-card h2 {
+            margin-top: 0;
+        }
+        .shop-details {
+            list-style: none;
+            padding: 0;
+        }
+        .shop-details li {
+            margin: 10px 0;
+        }
+        .shop-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .shop-link:hover {
+            background: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .shop-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Airport Shops</h1>
+        <div class="shop-list">
+            {% for shop in frappe.get_all("Airport Shop", fields=["name", "shop_name", "airport_city", "shop_number", "tenant"]) %}
+            <div class="shop-card">
+                <h2>{{ shop.shop_name }}</h2>
+                <ul class="shop-details">
+                    <li><strong>Shop Number:</strong> {{ shop.shop_number }}</li>
+                    <li><strong>Airport City:</strong> {{ shop.airport_city }}</li>
+                    <li><strong>Tenant:</strong> {{ shop.tenant or "Available" }}</li>
+                </ul>
+                <a href="/shop_detailes?{{ shop.name }}" class="shop-link">View Details</a>
+
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

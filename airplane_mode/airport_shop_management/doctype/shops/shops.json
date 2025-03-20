@@ -5,7 +5,9 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "shop_name"
+  "shop_name",
+  "location",
+  "description"
  ],
  "fields": [
   {
@@ -14,11 +16,21 @@
    "in_list_view": 1,
    "label": "Shop Name",
    "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-19 16:56:11.258149",
+ "modified": "2025-03-20 06:56:31.215703",
  "modified_by": "Administrator",
  "module": "airport_shop_management",
  "name": "Shops",

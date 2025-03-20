@@ -156,7 +156,8 @@ doc_events = {
         "validate":"airplane_mode.py.capacity.validate_ticket"
     },
     "Airplane Flight":{
-         "on_submit":"airplane_mode.py.airplane_flight.on_submit"
+         "on_submit":"airplane_mode.py.airplane_flight.on_submit",
+         "on_update":"airplane_mode.py.trigger_gate_number.trigger_gate_number"
     },
     "Lease Contract":{
         "before_save": "airplane_mode.py.lease_contract.check_lease_expiry"
@@ -170,13 +171,13 @@ doc_events = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	# "all": [
-# 	# 	"airplane_mode.tasks.all"
-# 	# ],
-# 	"monthly": [
-# 		"airplane_mode.py.rent_payment.generate_monthly_rent_payments"
-# 	],
+scheduler_events = {
+	# "all": [
+	# 	"airplane_mode.tasks.all"
+	# ],
+	"monthly": [
+		"airplane_mode.py.emailscheduler.sent_rent_due_reminders"
+	],
 # # 	"hourly": [
 # # 		"airplane_mode.tasks.hourly"
 # # 	],
@@ -186,7 +187,7 @@ doc_events = {
 # 	"monthly": [
 # 		"airplane_mode.tasks.monthly"
 # 	],
-# }
+}
 
 # Testing
 # -------
